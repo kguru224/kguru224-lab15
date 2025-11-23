@@ -55,6 +55,42 @@ public class EnigmaFrame extends JFrame {
         settingsPanel.add(startField);
 
         add(settingsPanel BorderLayout.NORTH);
+
+        // Center panel for the text area (input and output)
+
+        JPanel ioPanel = new JPanel(new GridLayout(1,2,10,10));
+
+        inputArea = new JTextArea();
+        outputArea = new JTextArea();
+        outputArea.setEditable(false);
+
+        JScrollPane inputScroll = new JScrollPane(inputArea);
+        JScrollPane outputScroll = new JScrollPane(outputArea);
+
+        ioPanel.add(inputScroll);
+        ioPanel.add(outputScroll);
+
+        add(ioPanel, BorderLayout.CENTER);
+
+        // Bottom panel for the buttons
+
+        JPanel buttonPanel = new JButton();
+
+        encryptButton = new JButton("Encrypt");
+        decryptButton = new JButton("Decrypt");
+
+        buttonPanel.add(encryptButton);
+        buttonPanel.add(decryptButton);
+
+        add(buttonPanel, BorderLayout.SOUTH);
+
+        // Button logic 
+
+        encryptButton.addActionListener(e -> process("encrypt"));
+        decryptButton.addActionListener(e -> process("decrypt"));
+
+        setVisible(true);
+
     }
 
 
