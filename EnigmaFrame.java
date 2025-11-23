@@ -37,6 +37,24 @@ public class EnigmaFrame extends JFrame {
         innerBox = new JComboBox<>(rotorChoices);
         middleBox = new JComboBox<>(rotorChoices);
         outerBox = new JComboBox<>(rotorChoices);
+
+        // Starting letters positions
+
+        startField = new JTextField(3);
+
+        settingsPanel.add(innerLabel);
+        settingsPanel.add(innerBox);
+
+        settingsPanel.add(middleLabel);
+        settingsPanel.add(middleBox);
+
+        settingsPanel.add(outerLabel);
+        settingsPanel.add(outBox);
+
+        settingsPanel.add(startLabel);
+        settingsPanel.add(startField);
+
+        add(settingsPanel BorderLayout.NORTH);
     }
 
 
